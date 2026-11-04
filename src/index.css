@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --navy-primary: #0F2942;
+    --navy-dark: #0A1E31;
+    --navy-subtle: #F0F4F8;
+    --navy-surface: #1E3A5F;
+    --bg-canvas: #FFFFFF;
+    --bg-subtle: #F8FAFC;
+    --text-main: #0F172A;
+    --text-muted: #475569;
+    --text-subtle: #64748B;
+    --border-subtle: #E2E8F0;
+    --border-medium: #CBD5E1;
+    --accent-blue: #1D4ED8;
+    --accent-teal: #0F766E;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Floating animation for interactive icon buttons */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(1.5deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(0.5deg);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(15, 41, 66, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(15, 41, 66, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: gentle-pulse-glow 3s infinite;
+}
+
+/* Custom print rules for clean A4 PDF Export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 14mm 16mm;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
+/* Clean, restrained scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

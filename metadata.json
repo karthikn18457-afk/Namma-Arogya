@@ -1,0 +1,6 @@
+{
+  "name": "JANASEVA HEALTH - Public Healthcare & Hospital Monitoring System",
+  "description": "Mobile-first platform connecting citizens, government hospitals, and healthcare administrators for hospital discovery, doctor schedules, appointment booking, grievance reporting, and live facility monitoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
